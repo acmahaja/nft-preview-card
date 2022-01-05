@@ -23,7 +23,6 @@
     --font-size: 18px;
 }
 
-@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@100;200;300;400;500;600;700;800;900&display=swap');
 html {
     background-color: var(--dark-blue-main-bg);
     margin: 0;
@@ -43,14 +42,14 @@ body {
 }
 
 .card {
-    height: 34.125em;
-    width: 20.5em;
+    height: 37.5em;
+    width: 22em;
     background-color: var(--dark-blue-card-bg);
-    border-radius: var(--border-radius);
+    border-radius: 12px;
     box-shadow: 0px 0px 45px -7px hsl(216, 56%, 4%);
     display: flex;
     flex-direction: column;
-    justify-content: space-between;
+    justify-content: flex-start;
     align-items: center;
     padding: 25px;
     box-sizing: border-box;
@@ -59,9 +58,9 @@ body {
 .cover-img {
     background-image: url('./images/image-equilibrium.jpg');
     background-size: cover;
-    border-radius: var(--border-radius);
-    height: 17.5em;
-    width: 17.5em;
+    border-radius: 6px;
+    height: calc(22em - 50px);
+    width: calc(22em - 50px);
     color: transparent;
 }
 
@@ -94,47 +93,52 @@ body {
 
 .card h1 {
     font-family: 'Outfit', sans-serif;
+    font-weight: 500;
     color: var(--white);
-    font-weight: 600;
-    font-size: 24px;
+    font-size: 22px;
     width: 100%;
+    height: fit-content;
     margin: 0;
-    padding: 0;
+    padding: .85em 0;
+    padding-top: 1.15em;
 }
 
 .card p {
     width: 100%;
-    font-size: 16px;
+    font-size: 1.15em;
+    height: auto;
+    font-weight: 200;
     font-family: 'Outfit', sans-serif;
-    font-weight: 100;
     color: var(--soft-blue);
-    font-size: medium;
-    line-height: 1.75;
+    line-height: 1.45;
     margin: 0;
     padding: 0;
+    margin-bottom: 1.25em;
 }
 
 .price-info {
     width: 100%;
-    height: 18px;
+    height: fit-content;
     font-family: 'Outfit', sans-serif;
-    font-weight: 600;
+    font-weight: 500;
     border-bottom: 1px solid var(--dark-blue-line);
     box-sizing: border-box;
-    /* padding: 1.5em 0em; */
     padding: 0em;
-    padding-bottom: 1.5em;
+    padding-bottom: 1.55em;
     display: flex;
     flex-direction: row;
     align-items: center;
     justify-content: space-between;
     margin: 0;
+    font-size: 16px;
 }
 
 .price {
     color: var(--cyan);
     margin: 0;
     padding: 0;
+    letter-spacing: 2px;
+    word-spacing: 2px;
 }
 
 .time {
@@ -144,39 +148,50 @@ body {
     transition: color .25s;
 }
 
+.time i {
+    margin-right: 10px;
+}
+
 .time:hover {
     color: var(--cyan);
     cursor: pointer;
 }
 
 .user {
+    height: 3em;
     width: 100%;
-    height: 2em;
     display: flex;
     flex-direction: row;
+    justify-content: flex-start;
     align-items: center;
+    padding-top: 1.5em;
+    box-sizing: border-box;
+    font-family: 'Outfit', sans-serif;
+    color: var(--soft-blue);
+    word-spacing: 2px;
+    letter-spacing: 1px;
+    font-size: 0.9em;
+    font-weight: 400;
 }
 
-.user-icon {
-    height: 30px;
-    width: 30px;
-    display: block;
-    background-image: url('./images/image-avatar.png');
-    background-size: cover;
-    border-radius: 50%;
-    border: 2px solid var(--white);
-    margin-right: 10px;
-}
-
-.user a {
+.user-name a {
     text-decoration: none;
     color: var(--white);
-    font-weight: 100;
-    transition: color .25s;
 }
 
-.user a:hover {
+.user-name a:hover {
     color: var(--cyan);
+    cursor: pointer;
+}
+
+.user-image {
+    height: 30px;
+    width: 30px;
+    background-image: url('./images/image-avatar.png');
+    background-size: cover;
+    margin-right: 0.75em;
+    border-radius: 50%;
+    border: 1px solid white;
 }
 
 .attribution {
