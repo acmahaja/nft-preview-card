@@ -1,12 +1,197 @@
-.attribution {
-    font-size: 11px;
-    text-align: center;
+/* ## Colors
+
+### Primary
+
+- Soft blue: hsl(215, 51%, 70%)
+- Cyan: hsl(178, 100%, 50%)
+
+### Neutral
+
+- Very dark blue (main BG): 
+- Very dark blue (card BG): hsl(216, 50%, 16%)
+- Very dark blue (line): hsl(215, 32%, 27%)
+- White: hsl(0, 0%, 100%) */
+
+:root {
+    --soft-blue: hsl(215, 51%, 70%);
+    --cyan: hsl(178, 100%, 50%);
+    --white: hsl(0, 0%, 100%);
+    --dark-blue-main-bg: hsl(217, 54%, 11%);
+    --dark-blue-card-bg: hsl(216, 50%, 16%);
+    --dark-blue-line: hsl(215, 32%, 27%);
+    --border-radius: 18px;
+    --font-size: 18px;
 }
 
-.attribution a {
-    color: hsl(228, 45%, 44%);
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@100;200;300;400;500;600;700;800;900&display=swap');
+html {
+    background-color: var(--dark-blue-main-bg);
+    margin: 0;
+    padding: 0;
+    height: 100vh;
+    width: 100vw;
 }
 
 body {
-    background-color: red;
+    height: 100%;
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.card {
+    height: 34.125em;
+    width: 20.5em;
+    background-color: var(--dark-blue-card-bg);
+    border-radius: var(--border-radius);
+    box-shadow: 0px 0px 45px -7px hsl(216, 56%, 4%);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    padding: 25px;
+    box-sizing: border-box;
+}
+
+.cover-img {
+    background-image: url('./images/image-equilibrium.jpg');
+    background-size: cover;
+    border-radius: var(--border-radius);
+    height: 17.5em;
+    width: 17.5em;
+    color: transparent;
+}
+
+.cover-link-hover {
+    height: 100%;
+    width: 100%;
+    background-color: rgba(0, 255, 247, 50%);
+}
+
+.cover-img .show {
+    color: var(--white);
+    font-size: 2.5em;
+    height: 100%;
+    width: 100%;
+    border-radius: var(--border-radius);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    transition: opacity .5s;
+}
+
+.show {
+    opacity: 0;
+}
+
+.show:hover {
+    opacity: 1;
+}
+
+.card h1 {
+    font-family: 'Outfit', sans-serif;
+    color: var(--white);
+    font-weight: 600;
+    font-size: 24px;
+    width: 100%;
+    margin: 0;
+    padding: 0;
+}
+
+.card p {
+    width: 100%;
+    font-size: 16px;
+    font-family: 'Outfit', sans-serif;
+    font-weight: 100;
+    color: var(--soft-blue);
+    font-size: medium;
+    line-height: 1.75;
+    margin: 0;
+    padding: 0;
+}
+
+.price-info {
+    width: 100%;
+    height: 18px;
+    font-family: 'Outfit', sans-serif;
+    font-weight: 600;
+    border-bottom: 1px solid var(--dark-blue-line);
+    box-sizing: border-box;
+    /* padding: 1.5em 0em; */
+    padding: 0em;
+    padding-bottom: 1.5em;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    margin: 0;
+}
+
+.price {
+    color: var(--cyan);
+    margin: 0;
+    padding: 0;
+}
+
+.time {
+    color: var(--soft-blue);
+    margin: 0;
+    padding: 0;
+    transition: color .25s;
+}
+
+.time:hover {
+    color: var(--cyan);
+    cursor: pointer;
+}
+
+.user {
+    width: 100%;
+    height: 2em;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+.user-icon {
+    height: 30px;
+    width: 30px;
+    display: block;
+    background-image: url('./images/image-avatar.png');
+    background-size: cover;
+    border-radius: 50%;
+    border: 2px solid var(--white);
+    margin-right: 10px;
+}
+
+.user a {
+    text-decoration: none;
+    color: var(--white);
+    font-weight: 100;
+    transition: color .25s;
+}
+
+.user a:hover {
+    color: var(--cyan);
+}
+
+.attribution {
+    position: fixed;
+    bottom: 1em;
+    color: var(--soft-blue);
+    font-family: 'Outfit', sans-serif;
+}
+
+.attribution a {
+    text-decoration: none;
+    color: var(--white);
+    transition: color 0.5s;
+}
+
+.attribution a:hover {
+    color: var(--cyan);
 }
